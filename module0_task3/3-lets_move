@@ -1,2 +1,2 @@
 #!/bin/sh
-mv [:upper:]* /tmp/u/
+mv [:upper:]* /tmp/u
