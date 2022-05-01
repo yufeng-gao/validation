@@ -1,3 +1,3 @@
 #!/bin/sh
-touch "\*\\'\"DevOps\"\'\\*$\?\*\*\*\*\*:)"
-printf "Hello DevOps\n" > "\*\\'\"DevOps\"\'\\*$\?\*\*\*\*\*:)"
+touch "\*\\\\'\"DevOps\"\'\\\\*$\?\*\*\*\*\*:)"
+printf "Hello DevOps\n" > "\*\\\\'\"DevOps\"\'\\\\*$\?\*\*\*\*\*:)"
