@@ -1,4 +1,4 @@
-# Ananke, A theme for [Hugo](http://gohugo.io/), a framework for building websites.
+# Ananke, A theme for [Hugo](https://gohugo.io/), a framework for building websites.
 
 The intent of this theme is to provide a solid starting place for Hugo sites with basic features and include best practices for performance, accessibility, and rapid development.
 
@@ -40,10 +40,10 @@ Also includes examples of Hugo Features or Functions:
 - `len`
 - Conditionals
 - `ge` (greater than or equal to)
-- `.Site.Params.mainSections` to avoid hard-coding "blog," etc. [[release note](https://github.com/spf13/hugo/blob/66ec6305f6cb450ddf9c489854146bac02f7dca1/docs/content/meta/release-notes.md#enhancements)]
+- `.Site.Params.mainSections` to avoid hard-coding "blog," etc. [[release note](https://github.com/gohugoio/hugo/blob/66ec6305f6cb450ddf9c489854146bac02f7dca1/docs/content/meta/release-notes.md#enhancements)]
 
 
-This theme uses the "Tachyons" CSS library. This will allow you to manipulate the design of the theme by changing class names in HTML without touching the original CSS files. For more information see the [Tachyons website](http://tachyons.io/).
+This theme uses the "Tachyons" CSS library. This will allow you to manipulate the design of the theme by changing class names in HTML without touching the original CSS files. For more information see the [Tachyons website](https://tachyons.io/).
 
 
 
@@ -113,7 +113,7 @@ If user is using [Page Resources](https://gohugo.io/content-management/page-reso
 #### Other hero settings
 If you would like to hide the header text on the featured image on a page, set `omit_header_text` to `true`. See `exampleSite/content/contact.md` for an example.
 
-You don't need an image though. The default background color is black, but you can change the color, by changing the default color class in the config.toml file. Choose a background color from any on the [Tachyons](http://tachyons.io/docs/themes/skins/) library site, and preface it with "bg-"
+You don't need an image though. The default background color is black, but you can change the color, by changing the default color class in the config.toml file. Choose a background color from any on the [Tachyons](https://tachyons.io/docs/themes/skins/) library site, and preface it with "bg-"
 
 example: `background_color_class = "bg-blue"` or `background_color_class = "bg-gray"`
 
@@ -159,6 +159,21 @@ params:
     url: https://github.com/theNewDynamic
     label: TND GitHub Account
     color: '#ff6800'
+```
+
+#### Limit Follow or Share
+
+If a user needs to control Share and Follow of a service, for example enabling "Share on Facebook" without having a Facebook Page to "follow", they can set `follow: false` one the registered service.
+
+```yaml
+params:
+  ananke_socials:
+  - name: facebook
+    label: Facebook
+    follow: false
+  - name: twitter
+    url: https://twitter.com/theNewDynamic
+    label: TND Twitter
 ```
 
 #### Social Icons Customization
@@ -220,7 +235,7 @@ _n.b. in future versions we will likely separate the typeface and other body cla
 
 Ananke stylesheet is built with Hugo Pipes's [Asset Bundling](https://gohugo.io/hugo-pipes/bundling/#readout) alone to maximize compatibiliy. The theme simply bundles its several files into one minified and fingerprinted (in production) CSS file.
 
-Ananke uses [Tachyon.io](http://tachyons.io/) utility class library.
+Ananke uses [Tachyon.io](https://tachyons.io/) utility class library.
 
 #### Custom CSS
 
@@ -239,6 +254,7 @@ For example, if your css files are `assets/ananke/css/custom.css` and `assets/an
   [params]
     custom_css = ["custom.css","special.css"]
 ```
+__IMPORTANT__: Files registered through the `custom_css` array, while unlimited in number, must be of the same type (Ex: all `scss` or all `css`)
 
 __Note on retrocompatibiliy for custom css__: If the files registered through the `custom_css` setting are not found in `assets/ananke/css` the theme will expect them to live at the given path relative to the static directory and load them as <link> requests.
 
@@ -275,7 +291,7 @@ Set the `text_color` param in the `config.toml` file.
 Individual Page (prioritized over global):
 Set the `text_color` param in a page's markdown file front matter.
 
-note: The value of `text_color` must be a valid tachyons color class. Alist can be found [here](http://tachyons.io/docs/themes/skins/).
+note: The value of `text_color` must be a valid tachyons color class. A list can be found [here](https://tachyons.io/docs/themes/skins/).
 
 
 ### Localize date format
@@ -287,7 +303,8 @@ Dates of blog posts and single pages are rendered with the default date format c
   date_format = "2. January 2006"
 ```
 
-See hugo's documentation of the [`dateFormat` function](https://gohugo.io/functions/dateformat/) for more details.
+With hugo 0.87.0 and above, you can also use predefined layout, like `:date_full`, and it will output localized dates or times. 
+See hugo's documentation of the [`time.Format` function](https://gohugo.io/functions/dateformat/) for more details.
 
 
 ### Nearly finished
